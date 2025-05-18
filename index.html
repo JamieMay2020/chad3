@@ -81,9 +81,35 @@
       overflow: hidden;
     }
 
-    @keyframes pulseBackground {
-      0%, 100% { background: linear-gradient(to bottom right, #111, #222); }
-      50% { background: linear-gradient(to bottom right, #222, #111); }
+    /* Multiple animations with 1.5x increased movement */
+    @keyframes floatText1 {
+      0%   { transform: translateY(0); }
+      50%  { transform: translateY(-15px); }
+      100% { transform: translateY(0); }
+    }
+    
+    @keyframes floatText2 {
+      0%   { transform: translateY(0); }
+      40%  { transform: translateY(-23px); }
+      100% { transform: translateY(0); }
+    }
+    
+    @keyframes floatText3 {
+      0%   { transform: translateY(0); }
+      60%  { transform: translateY(-18px); }
+      100% { transform: translateY(0); }
+    }
+    
+    @keyframes floatText4 {
+      0%   { transform: translateY(0); }
+      55%  { transform: translateY(-12px); }
+      100% { transform: translateY(0); }
+    }
+    
+    @keyframes floatText5 {
+      0%   { transform: translateY(0); }
+      45%  { transform: translateY(-20px); }
+      100% { transform: translateY(0); }
     }
 
     .main-center {
@@ -122,12 +148,6 @@
       color: #ffffff;
     }
 
-    @keyframes floatText {
-      0%   { transform: translateY(0); }
-      50%  { transform: translateY(-5px); }
-      100% { transform: translateY(0); }
-    }
-
     .caption {
       position: absolute;
       font-size: 1.1rem;
@@ -135,14 +155,34 @@
       color: white;
       text-shadow: 2px 2px 2px #000;
       max-width: 200px;
-      animation: floatText 3s ease-in-out infinite;
+      z-index: 20; /* Ensure captions appear above images */
     }
-
-    .c1 { top: 10%; left: 10%; }
-    .c2 { top: 10%; right: 10%; }
-    .c3 { bottom: 37%; left: 11%; }
-    .c4 { bottom: 20%; right: 10%; }
-    .c5 { top: 40%; left: 50%; }
+    
+    .c1 { 
+      top: 10%; 
+      left: 10%;
+      animation: floatText1 4s ease-in-out infinite;
+    }
+    .c2 { 
+      top: 10%; 
+      right: 10%;
+      animation: floatText2 5s ease-in-out infinite; 
+    }
+    .c3 { 
+      bottom: 37%; 
+      left: 11%;
+      animation: floatText3 6s ease-in-out infinite;
+    }
+    .c4 { 
+      bottom: 20%; 
+      right: 10%;
+      animation: floatText4 4.5s ease-in-out infinite;
+    }
+    .c5 { 
+      top: 40%; 
+      left: 50%;
+      animation: floatText5 5.5s ease-in-out infinite;
+    }
 
     @keyframes chadFlex {
       0%   { transform: scale(1); }
@@ -229,7 +269,7 @@
 
       <div class="center-links">
         <a href="https://x.com/i/communities/1922848127691915699" target="_blank">x.com</a>
-        <a href="https://pump.fun/" target="_blank">pump.fun</a>
+        <a href="https://pump.fun" target="_blank">pump.fun</a>
       </div>
 
       <div class="caption c1">Built different since birth.</div>
